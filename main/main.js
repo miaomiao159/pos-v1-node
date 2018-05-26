@@ -36,13 +36,13 @@ module.exports = function printInventory(selectedItems) {
                 curprice = m[key] * items[i].price;
                 if (promotions[0].barcodes.indexOf(key) != -1) {
                     if (m[key] >= 2) {
-                        curcharge =Math.round(items[i].price*100)/100 ;
+                        curcharge =items[i].price ;
                     }
                 }
                 res += '名称：' + items[i].name + '，数量：' + m[key] + items[i].unit + '，单价：' + (items[i].price).toFixed(2) + '(元)，小计：' + (curprice - curcharge).toFixed(2) + '(元)\n';
             }
-            sum += Math.round((curprice - curcharge)*100)/100;
-            charge +=Math.round(curcharge*100)/100 ;
+            sum += curprice - curcharge;
+            charge +=curcharge ;
         }
     }
     res += '----------------------\n' + '挥泪赠送商品:\n';
