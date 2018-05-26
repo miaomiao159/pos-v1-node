@@ -26,8 +26,8 @@ module.exports = function printInventory(selectedItems) {
 
     var items = loadAllItems();
     var promotions = loadPromotions();
-    var sum = 0.00;
-    var charge = 0.00;
+    var sum = 0;
+    var charge = 0;
     for (var key in m) {
         for (let i = 0; i < items.length; i++) {
             var curprice = 0;
